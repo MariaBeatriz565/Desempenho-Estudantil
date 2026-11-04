@@ -59,9 +59,9 @@ async function iniciarGraficos() {
     const base = await resposta.json();
     estudantes = base.registros.map(([horas, frequencia, recursos, nota]) =>
       ({ horas, frequencia, recursos, nota }));
-    const horas = criarGrafico("horas", "line", "Horas estudadas (h)", "#397555", true);
-    const frequencia = criarGrafico("frequencia", "bar", "Frequência às aulas (%)", "#629477");
-    const recursos = criarGrafico("recursos", "bar", "Nível de acesso a recursos", "#849553");
+    const horas = criarGrafico("horas", "line", "Horas estudadas (h)", "#A40062", true);
+const frequencia = criarGrafico("frequencia", "bar", "Frequência às aulas (%)", "#D162A4");
+const recursos = criarGrafico("recursos", "bar", "Nível de acesso a recursos", "#FF9B56");
     const atualizar = () => {
       const nivel = porId("filtro").value;
       const selecao = estudantes.filter(aluno => !nivel || aluno.recursos === nivel);

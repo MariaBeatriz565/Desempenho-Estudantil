@@ -1,10 +1,10 @@
 :root {
     color-scheme: light;
-    --ink: #21382e;
-    --muted: #4e645a;
-    --accent: #27624a;
-    --line: #d9e5dd;
-    --bg: #f7f9f4
+    --ink: #302b30;
+    --muted: #625b61;
+    --accent: #A40062;
+    --line: #e6e0e3;
+    --bg: #fff
 }
 
 * {
@@ -14,7 +14,7 @@
 body {
     margin: 0;
     background: var(--bg);
-    font: 16px/1.55 system-ui, sans-serif;
+    font: 16px/1.55 "Inter", Arial, sans-serif;
     color: var(--ink)
 }
 
@@ -43,10 +43,9 @@ nav {
 }
 
 .brand {
-    font-size: 1.4rem;
+    font-family: "Poppins", sans-serif ;
     font-weight: 800;
-    text-decoration: none;
-    color: var(--ink)
+    font-style: normal;
 }
 
 .brand span,
@@ -55,10 +54,10 @@ a {
 }
 
 .intro {
-    background: #e8f1e7;
-    border-radius: 18px;
+    background: #fff;
+    border-radius: 4px;
     margin: 30px 0;
-    padding: clamp(22px, 5vw, 56px)
+    padding: 20px 0 24px
 }
 
 h1,
@@ -69,9 +68,9 @@ p {
 }
 
 h1 {
-    font-size: clamp(2rem, 5vw, 3.4rem);
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
     line-height: 1.1;
-    letter-spacing: -.045em;
+    letter-spacing: -.02em;
     margin: .25em 0
 }
 
@@ -89,8 +88,8 @@ p {
 
 .eyebrow {
     font-size: .74rem;
-    font-weight: 800;
-    letter-spacing: .12em;
+    font-weight: 700;
+    letter-spacing: .04em;
     color: var(--accent)
 }
 
@@ -131,7 +130,7 @@ article,
 #contexto {
     background: #fff;
     border: 1px solid var(--line);
-    border-radius: 14px;
+    border-radius: 4px;
     padding: clamp(14px, 3vw, 24px)
 }
 
@@ -159,15 +158,15 @@ label {
     display: grid;
     gap: 4px;
     font-size: .9rem;
-    font-weight: 650
+    font-weight: 600
 }
 
 input,
 select,
 button {
     font: inherit;
-    border: 1px solid #afc4b6;
-    border-radius: 7px;
+    border: 1px solid #bbb2b8;
+    border-radius: 4px;
     padding: 8px 11px;
     background: white;
     color: var(--ink);
@@ -186,7 +185,7 @@ button:disabled {
 }
 
 :focus-visible {
-    outline: 3px solid #8b592e;
+    outline: 3px solid #A40062;
     outline-offset: 2px
 }
 
@@ -258,5 +257,85 @@ footer {
 
     .canvas {
         height: 245px
+    }
+}
+
+:root {
+    --laranja-claro: #FF9B56;
+    --rosa: #D162A4;
+    --laranja: #D62E02;
+    --rosa-escuro: #A40062;
+}
+
+.intro {
+    border-bottom: 2px solid var(--laranja-claro);
+}
+
+.brand {
+    color: var(--rosa-escuro);
+}
+
+h3 {
+    font-size: 1.1rem;
+}
+
+.indicadores article:nth-child(1) {
+    border-top: 3px solid var(--laranja-claro);
+}
+
+.indicadores article:nth-child(2) {
+    border-top: 3px solid var(--rosa);
+}
+
+.indicadores article:nth-child(3) {
+    border-top: 3px solid var(--laranja);
+}
+
+#nota {
+    color: var(--rosa-escuro);
+}
+
+button:hover:not(:disabled) {
+    background: #82004e;
+}
+
+#cancelar,
+li button {
+    background: #fff;
+    color: var(--rosa-escuro);
+    border-color: var(--rosa);
+}
+
+#cancelar:hover,
+li button:hover:not(:disabled) {
+    background: #fff4fa;
+}
+
+nav a {
+    text-underline-offset: 4px;
+}
+
+input:hover,
+select:hover {
+    border-color: var(--rosa);
+}
+
+@media (max-width: 650px) {
+    .nav {
+        flex-wrap: wrap;
+        padding-block: 12px;
+    }
+
+    .brand {
+        font-size: 1.1rem;
+    }
+
+    nav {
+        gap: 14px;
+    }
+
+    fieldset label,
+    fieldset button {
+        max-width: 100%;
     }
 }
