@@ -1,0 +1,85 @@
+ <!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport"
+            content="width=device-width,initial-scale=1"><title>EducaData |
+            Desempenho estudantil</title><link rel="stylesheet"
+            href="css/style.css"><script defer
+            src="https://cdn.jsdelivr.net/npm/chart.js@4.4.9/dist/chart.umd.min.js"></script><script
+            defer src="js/config.js"></script><script defer
+            src="js/script.js"></script></head>
+    <body>
+        <header><div class="wrap nav"><a class="brand"
+                    href="#">Educa<span>Data</span></a><nav
+                    aria-label="Seções"><a href="#analises">Análises</a><a
+                        href="#metas">Metas</a></nav></div></header>
+        <main class="wrap">
+            <section class="intro"><p class="eyebrow">EDUCAÇÃO E
+                    DADOS</p><h1>Desempenho estudantil</h1><p>Explore como as
+                    horas de estudo, a frequência às aulas e o acesso a recursos
+                    educacionais se relacionam com as notas.</p></section>
+            <section id="analises" aria-labelledby="titulo-analises">
+                <div class="section-head"><div><p class="eyebrow">01 · BASE DE
+                            ESTUDANTES</p><h2 id="titulo-analises">Visão
+                            geral</h2></div><label>Nível de acesso a
+                        recursos<select id="filtro"><option value>Todos os
+                                níveis</option><option
+                                value="Low">Baixo</option><option
+                                value="Medium">Médio</option><option
+                                value="High">Alto</option></select></label></div>
+                <p id="dados-status" role="status">Carregando a base de
+                    estudantes…</p>
+                <div class="indicadores" aria-live="polite">
+                    <article><span>Estudantes na seleção</span><strong
+                            id="total">—</strong></article>
+                    <article><span>Nota média · pontos</span><strong
+                            id="nota">—</strong></article>
+                    <article><span>Frequência média · %</span><strong
+                            id="presenca">—</strong></article>
+                </div>
+                <div class="graficos">
+                    <article class="principal"><h3>Horas estudadas ×
+                            notas</h3><p>Nota média por quantidade de horas de
+                            estudo.</p><div class="canvas"><canvas id="horas"
+                                role="img"
+                                aria-label="Notas médias por horas estudadas"></canvas></div></article>
+                    <article><h3>Frequência às aulas × notas</h3><p>Nota média
+                            por faixa percentual de presença.</p><div
+                            class="canvas"><canvas id="frequencia" role="img"
+                                aria-label="Notas médias por faixa de frequência"></canvas></div></article>
+                    <article><h3>Acesso a recursos × notas</h3><p>Nota média por
+                            nível de acesso a recursos educacionais.</p><div
+                            class="canvas"><canvas id="recursos" role="img"
+                                aria-label="Notas médias por nível de recursos"></canvas></div></article>
+                </div>
+                <p class="nota">As médias mostram associações dentro da amostra.
+                    Os gráficos, por si só, não permitem concluir o que causou
+                    as diferenças nas notas.</p>
+            </section>
+            <section id="metas" aria-labelledby="titulo-metas"><p
+                    class="eyebrow">02 · ACOMPANHAMENTO</p><h2
+                    id="titulo-metas">Metas acadêmicas</h2><p>Defina uma
+                    nota-alvo e compare com a média dos estudantes na seleção
+                    atual.</p>
+                <form id="form"><fieldset id="campos" disabled><label>Nome da
+                            meta<input id="nome" required maxlength="80"
+                                placeholder="Ex.: Melhorar a nota média"></label><label>Nota-alvo
+                            (pontos)<input id="alvo" type="number" min="0"
+                                max="100" step="0.1" required
+                                placeholder="Ex.: 75"></label><button
+                            id="salvar">Cadastrar meta</button><button
+                            type="button" id="cancelar"
+                            hidden>Cancelar</button></fieldset></form>
+                <p id="meta-status" role="status"></p><ul
+                    id="lista"></ul></section>
+            <section id="contexto"><p class="eyebrow">03 · CONTEXTO
+                    EDUCACIONAL</p><h2>Matrículas no ensino secundário no
+                    Brasil</h2><p>Taxa bruta de matrícula, em porcentagem. Este
+                    indicador nacional é apresentado separadamente da base de
+                    estudantes.</p><p id="indicador-publico"
+                    role="status">Consultando o Banco Mundial…</p><a
+                    href="https://data.worldbank.org/indicator/SE.SEC.ENRR?locations=BR">Fonte:
+                    Banco Mundial</a></section>
+        </main>
+        <footer><div class="wrap">EducaData · Projeto acadêmico de Sistemas para
+                Internet<br>Base de estudantes: Student Performance Factors
+                (Kaggle), arquivo fornecido pela equipe.</div></footer>
+    </body></html>
